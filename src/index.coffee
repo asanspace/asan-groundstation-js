@@ -1,8 +1,8 @@
 SX127x = require('sx127x')
 sx127x = new SX127x({
     frequency: 915e6
-    resetPin: 6
-    dio0Pin: 5
+    resetPin: 414
+    dio0Pin: 413
   })
 
 sx127x.open (err) ->
