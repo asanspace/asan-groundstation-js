@@ -7,13 +7,13 @@ sx127x = new SX127x({
 
 sx127x.open (err) =>
   console.log 'open', if err then err else 'success'
-  throw err if err?
+  # throw err if err?
 
   sx127x.on 'data', (data, rssi) =>
     console.log 'data:', '\'' + data.toString() + '\'', rssi
 
-  sx127x.receive (err) =>
-    console.log 'receive', if err then err else 'success'
+  # sx127x.receive (err) =>
+  #   console.log 'receive', if err then err else 'success'
 
 process.on 'SIGINT', =>
   sx127x.close (err) =>
