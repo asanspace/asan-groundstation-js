@@ -1,9 +1,16 @@
+LoraSerial = require './lora-serial'
+lora = new LoraSerial
 
-SerialPort = require 'serialport'
-port = new SerialPort '/dev/ttyACM0', parser: SerialPort.parsers.readline '\n'
+lora.onPacket (packet) =>
+  { message, rssi } = packet
 
-port.on 'open', () ->
-  console.log 'Port open!'
+  message = {
+    lat: message[0]
+    lon: message[1]
+    altitude: message[2]
+    speed: message[3]
+    time: message[4]
+    rssi
+  }
 
-port.on 'data', (data) ->
-  console.log { data }
+  console.log message

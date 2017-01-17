@@ -19,6 +19,7 @@
   "homepage": "https://github.com/asanspace/asan-groundstation-js#readme",
   "dependencies": {
     "coffee-script": "^1.12.2",
+    "lodash": "^4.17.4",
     "serialport": "^4.0.7"
   }
 }
